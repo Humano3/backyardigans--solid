@@ -55,6 +55,65 @@ $emailService.sendEmailNotification($user, "Welcome to our service!");
 
 ?>
 
+//Codigo SOLID para la letra O
+
+<?php
+
+// Clase abstracta Invoice
+abstract class Invoice
+{
+    protected $amount;
+
+    public function __construct($amount)
+    {
+        $this->amount = $amount;
+    }
+
+    abstract public function calculateTotal();
+}
+
+// Clase RegularInvoice
+class RegularInvoice extends Invoice
+{
+    public function calculateTotal()
+    {
+        return $this->amount;
+    }
+}
+
+// Clase DiscountedInvoice
+class DiscountedInvoice extends Invoice
+{
+    public function calculateTotal()
+    {
+        return $this->amount * 0.9; // 10% discount
+    }
+}
+
+// Clase PremiumInvoice
+class PremiumInvoice extends Invoice
+{
+    public function calculateTotal()
+    {
+        return $this->amount * 1.2; // 20% extra charge
+    }
+}
+
+// Uso de las clases refactorizadas
+$regularInvoice = new RegularInvoice(100);
+echo $regularInvoice->calculateTotal();
+
+$discountedInvoice = new DiscountedInvoice(100);
+echo $discountedInvoice->calculateTotal();
+
+$premiumInvoice = new PremiumInvoice(100);
+echo $premiumInvoice->calculateTotal();
+
+?>
+
+
+//Codigo SOLID para la letra O
+
 
 Codigo de Solid D
 
