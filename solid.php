@@ -1,3 +1,61 @@
+//Código Solid para la letra S
+
+<?php
+
+// Clase User: responsable de almacenar la información del usuario
+class User
+{
+    private $email;
+
+    public function __construct($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+}
+
+// Clase UserRepository: responsable de la persistencia de los datos del usuario
+class UserRepository
+{
+    public function save(User $user)
+    {
+        // Código para guardar el usuario en la base de datos
+    }
+}
+
+// Clase EmailService: responsable de enviar notificaciones por correo electrónico
+class EmailService
+{
+    public function sendEmailNotification(User $user, $message)
+    {
+        // Código para enviar un correo electrónico al usuario
+        $email = $user->getEmail();
+        // Aquí iría el código para enviar el email
+        echo "Enviando email a $email: $message";
+    }
+}
+
+// Uso de las clases refactorizadas
+$user = new User("example@example.com");
+
+$userRepository = new UserRepository();
+$userRepository->save($user);
+
+$emailService = new EmailService();
+$emailService.sendEmailNotification($user, "Welcome to our service!");
+
+?>
+
+
 Codigo de Solid D
 
 // Definición de la interfaz NotificationService
