@@ -114,6 +114,7 @@ echo $premiumInvoice->calculateTotal();
 
 //Codigo SOLID para la letra O
 
+<?php
 
 Codigo de Solid D
 
@@ -161,6 +162,7 @@ $smsNotification = new SMSNotification();
 $userWithSMSNotification = new User($smsNotification);
 $userWithSMSNotification->performAction();
 
+?>
 
 ///Letra I
 <?php
